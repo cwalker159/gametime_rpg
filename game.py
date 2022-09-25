@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """CarlCodes| CRWalker
-Driving a simple game framework with
+Driving a simple game framework with gameplay in the Jedi Temple using
    a dictionary object"""
 
 
@@ -37,15 +37,15 @@ rooms = {
 
     'Jedi Hall': {
         'south': 'Kitchen',
-        'east': 'Training Gym',
-        'west': 'Garage',
+        'west': 'Training Gym',
+        'east': 'Garage',
         'item': 'key'
     },
 
     'Kitchen': {
         'north': 'Jedi Hall',
-        'east': 'Garden',
-        'west': 'Dining',
+        'west': 'Garden',
+        'east': 'Dining',
         'item': 'monster',
     },
     'Dining Room': {
@@ -56,7 +56,8 @@ rooms = {
     'Garden': {
         'north': 'Gym',
         'west': 'Kitchen',
-        'item': 'Kyber crystal'
+        'item': 'Kyber crystal',
+        'item': 'Lightsaber'
     },
     'Training Gym': {
         'west': 'Jedi Hall',
@@ -118,6 +119,6 @@ while True:
         break
 
     # Define how a player can win
-    if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory:
+    if currentRoom == 'Training Gym' and 'key' in inventory and 'potion' in inventory:
         print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
         break
