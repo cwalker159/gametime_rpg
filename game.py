@@ -7,12 +7,14 @@ Driving a simple game framework with gameplay in the Jedi Temple using
 def showInstructions():
     """Show the game instructions when called"""
     # print a main menu and the commands
-    print('''"Get to the Garden with a key and a potion to win! Avoid the monsters!
+    print('''"Get to the Training Gym with a Kyber Crytal, 
+    a Lightsaber and the Sith Wayfinder to defeat Darth Maul and win!
     RPG Game
     ========
     Commands:
       go [direction]
       get [item]
+      fight [Darth Maul]
     ''')
 
 
@@ -20,7 +22,7 @@ def showStatus():
     """determine the current status of the player"""
     # print the player's current location
     print('---------------------------')
-    print('You are in the ' + currentRoom)
+    print('You have entered the ' + currentRoom)
     # print what the player is carrying
     print('Inventory:', inventory)
     # check if there's an item in the room, if so print it
@@ -36,27 +38,26 @@ inventory = []
 rooms = {
 
     'Jedi Hall': {
-        'south': 'Kitchen',
+        'south': 'Meditation Room',
         'west': 'Training Gym',
         'east': 'Garage',
-        'item': 'key'
+        'item': 'Sith Wayfinder'
     },
 
-    'Kitchen': {
+    'Meditation Room': {
         'north': 'Jedi Hall',
         'west': 'Garden',
         'east': 'Dining',
-        'item': 'monster',
+        'item': 'Kyber Crystal'
     },
     'Dining Room': {
-        'east': 'Kitchen',
+        'east': 'Meditation Room',
         'north': 'Garage',
-        'item': 'potion'
+        'item': 'Master Yoda'
     },
     'Garden': {
         'north': 'Gym',
-        'west': 'Kitchen',
-        'item': 'Kyber crystal',
+        'west': 'Meditation Room',
         'item': 'Lightsaber'
     },
     'Training Gym': {
@@ -66,8 +67,8 @@ rooms = {
     }
 }
 
-# start the player in the Hall
-currentRoom = 'Hall'
+# start the player in the Jedi Hall
+currentRoom = 'Jedi Hall'
 
 showInstructions()
 
@@ -83,7 +84,7 @@ while True:
 
     # normalizing input:
     # .lower() makes it lower case, .split() turns it to a list
-    # therefore, "get golden key" becomes ["get", "golden key"]
+    # therefore, "get the sith wayfinder" becomes ["get", "sith wayfinder"]
     move = move.lower().split(" ", 1)
 
     # if they type 'go' first
@@ -113,12 +114,17 @@ while True:
             # tell them they can't get it
             print('Can\'t get ' + move[1] + '!')
 
-    # If a player enters a room with a monster
-    if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
+    # If a player enters a room with Darth Maul
+    if 'item' in rooms[currentRoom] and 'Darth Maul' in rooms[currentRoom]['item']:
         print('A monster has got you... GAME OVER!')
         break
 
+    # If a player enters a room with Yoda
+    if 'item' in rooms[currentRoom] and 'Master Yoda' in rooms[currentRoom]['item']:
+        print('Master Yoda says you must face Darth Maul in the Training Gym... MAY THE FORCE BE WITH YOU!')
+        break
+
     # Define how a player can win
-    if currentRoom == 'Training Gym' and 'key' in inventory and 'potion' in inventory:
-        print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
+    if currentRoom == 'Training Gym' and 'Sith Wayfinder' in inventory and 'Kyber Crystal' in inventory and 'Lightsaber' in inventory:
+        print('You defeated Darth Maul and earned your place as a Jedi!... YOU WIN!')
         break
