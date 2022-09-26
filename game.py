@@ -41,13 +41,18 @@ rooms = {
         'south': 'Meditation Room',
         'west': 'Training Gym',
         'east': 'Garage',
+    },
+
+    'Garage': {
+        'east': 'Jedi Hall',
+        'north': 'Dining Room',
         'item': 'Sith Wayfinder'
     },
 
     'Meditation Room': {
         'north': 'Jedi Hall',
         'west': 'Garden',
-        'east': 'Dining',
+        'east': 'Dining Room',
         'item': 'Kyber Crystal'
     },
     'Dining Room': {
@@ -56,7 +61,7 @@ rooms = {
         'item': 'Master Yoda'
     },
     'Garden': {
-        'north': 'Gym',
+        'north': 'Training Gym',
         'west': 'Meditation Room',
         'item': 'Lightsaber'
     },
@@ -116,7 +121,7 @@ while True:
 
     # If a player enters a room with Darth Maul
     if 'item' in rooms[currentRoom] and 'Darth Maul' in rooms[currentRoom]['item']:
-        print('A monster has got you... GAME OVER!')
+        print('You\'re no match for Darth Maul... GAME OVER!')
         break
 
     # If a player enters a room with Yoda
