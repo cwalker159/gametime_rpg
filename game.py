@@ -44,8 +44,8 @@ rooms = {
     },
 
     'Garage': {
-        'east': 'Jedi Hall',
-        'north': 'Dining Room',
+        'west': 'Jedi Hall',
+        'south': 'Dining Room',
         'item': 'Sith Wayfinder'
     },
 
@@ -53,20 +53,20 @@ rooms = {
         'north': 'Jedi Hall',
         'west': 'Garden',
         'east': 'Dining Room',
-        'item': 'Kyber Crystal'
+        'item': 'kyber crystal'
     },
     'Dining Room': {
-        'east': 'Meditation Room',
+        'west': 'Meditation Room',
         'north': 'Garage',
         'item': 'Master Yoda'
     },
     'Garden': {
         'north': 'Training Gym',
-        'west': 'Meditation Room',
+        'east': 'Meditation Room',
         'item': 'Lightsaber'
     },
     'Training Gym': {
-        'west': 'Jedi Hall',
+        'east': 'Jedi Hall',
         'south': 'Garden',
         'item': 'Darth Maul'
     }
@@ -127,7 +127,6 @@ while True:
     # If a player enters a room with Yoda
     if 'item' in rooms[currentRoom] and 'Master Yoda' in rooms[currentRoom]['item']:
         print('Master Yoda says you must face Darth Maul in the Training Gym... MAY THE FORCE BE WITH YOU!')
-        break
 
     # Define how a player can win
     if currentRoom == 'Training Gym' and 'Sith Wayfinder' in inventory and 'Kyber Crystal' in inventory and 'Lightsaber' in inventory:
