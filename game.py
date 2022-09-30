@@ -46,7 +46,7 @@ rooms = {
     'Garage': {
         'west': 'Jedi Hall',
         'south': 'Dining Room',
-        'item': 'Sith Wayfinder'
+        'item': 'sith sxayfinder'
     },
 
     'Meditation Room': {
@@ -63,7 +63,7 @@ rooms = {
     'Garden': {
         'north': 'Training Gym',
         'east': 'Meditation Room',
-        'item': 'Lightsaber'
+        'item': 'lightsaber'
     },
     'Training Gym': {
         'east': 'Jedi Hall',
@@ -107,7 +107,7 @@ while True:
         # make two checks:
         # 1. if the current room contains an item
         # 2. if the item in the room matches the item the player wishes to get
-        if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
+        if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item'] and ['item'] is not None:
             # add the item to their inventory
             inventory.append(move[1])
             # display a helpful message
