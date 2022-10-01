@@ -121,7 +121,8 @@ while True:
 
     # If a player enters a room with Darth Maul
     if 'item' in rooms[currentRoom] and 'Darth Maul' in rooms[currentRoom]['item']:
-        print('You\'re no match for Darth Maul... GAME OVER!')
+        print('You\'re no match for Darth Maul... DRAW YOUR LIGHTSABER FOR BATTLE!')
+        print('Inventory:', inventory)
         break
 
     # If a player enters a room with Yoda
