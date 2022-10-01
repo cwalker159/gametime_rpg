@@ -46,7 +46,7 @@ rooms = {
     'Garage': {
         'west': 'Jedi Hall',
         'south': 'Dining Room',
-        'item': 'sith sxayfinder'
+        'item': 'sith wayfinder'
     },
 
     'Meditation Room': {
