@@ -1,7 +1,5 @@
 # gametime_rpg (Adventures of the Jedi Temple)
 
-One Paragraph of your project description goes here. Describe what you're trying to do.
-What is the purpose of putting up this repo?
 
 Adventures of the Jedi Temple is a text adventure style game that take place in the Jedi Temple. The goal is to collect all the artifacts before landing in the TRaining gym to face Darth Maul. Collect the Sith Wayfinder, Kyber Crystal and a Lightsaber to defeat the Sith Lord himself.
 
